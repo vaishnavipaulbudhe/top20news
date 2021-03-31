@@ -1,0 +1,29 @@
+<div *ngIf="article.urlToImage != null">
+  <img
+    class="card-img-top"
+    src="{{ article.urlToImage }}"
+    alt="Card image cap"
+  />
+</div>
+<div *ngIf="article.urlToImage == null">
+  <img
+    class="card-img-top"
+    src="../../../assets/image_not_found.jpeg"
+    alt="Card image cap"
+  />
+</div>
+<div class="card-body">
+  <strong class="d-inline-block mb-2 text-success">{{
+    article.source.name
+  }}</strong>
+  <h3 class="mb-0">
+    <a class="text-dark" target="_blank" href="{{ article.url }}">{{
+      article.title
+    }}</a>
+  </h3>
+  <div class="mb-1 text-muted">{{ article.publishedAt | dateFormat }}</div>
+  <p class="card-text mb-auto">
+    {{ article.description }}
+  </p>
+  <a target="_blank" href="{{ article.url }}">Continue reading</a>
+</div>
